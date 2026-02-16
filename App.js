@@ -4,11 +4,12 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "./screens/HomeScreen";
 import CreateScreen from "./screens/CreateScreen";
+import { BlogProvider } from "./context/BlogContext";
 
 const Stack = createNativeStackNavigator();
 
 function RootStack() {
-return (
+return ( 
   <Stack.Navigator screenOptions={{headerTitle: 'Note App'}}>
     <Stack.Screen name="Home" component={HomeScreen} />
     <Stack.Screen name="Create" component={CreateScreen} />
@@ -19,9 +20,11 @@ export default function App() {
 
 
   return (
-    <NavigationContainer>
-      <RootStack/>
-    </NavigationContainer>
+    <BlogProvider>
+      <NavigationContainer>
+        <RootStack/>
+      </NavigationContainer>
+    </BlogProvider>
   );
 }
 

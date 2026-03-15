@@ -1,0 +1,70 @@
+import {
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from "react-native";
+import React, { useState } from "react";
+import { BottomTabs } from "react-native-screens";
+
+export default function NoteForm() {
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
+  return (
+    <View style={styles.main}>
+      <Text style={styles.inputText}>Başlığı Giriniz</Text>
+      <TextInput
+        style={styles.input}
+        value={title}
+        onChangeText={(text) => setTitle(text)}
+      />
+
+      <Text style={styles.inputText}>İçeriği Giriniz</Text>
+      <TextInput
+        style={styles.input}
+        value={content}
+        onChangeText={(text) => setContent(text)}
+      />
+
+      <TouchableOpacity style={styles.buttonMain}>
+        <View style={styles.buttonView}>
+          <Text style={styles.buttonText}>Kaydet</Text>
+        </View>
+      </TouchableOpacity>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  main: {
+    marginTop: 10,
+  },
+  inputText: {
+    fontSize: 20,
+    marginLeft: 10,
+  },
+  input: {
+    borderWidth: 1,
+    borderColor: "gray",
+    margin: 10,
+    borderRadius: 20,
+    padding: 5,
+    fontSize: 18,
+    marginBottom: 15,
+  },
+  buttonMain: {
+    padding: 30,
+  },
+  buttonView: {
+    backgroundColor: "green",
+    padding: 10,
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 20,
+  },
+  buttonText: {
+    fontSize: 24,
+    color: "#fff",
+  },
+});

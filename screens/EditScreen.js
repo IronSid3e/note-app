@@ -1,9 +1,12 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
-import NoteForm from "../components/NoteForm";
 
-export default function CreateScreen() {
-  return <NoteForm />;
+export default function EditScreen() {
+  return (
+    <View>
+      <Text>EditScreen</Text>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({});

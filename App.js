@@ -4,27 +4,27 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "./screens/HomeScreen";
 import CreateScreen from "./screens/CreateScreen";
-import { BlogProvider } from "./context/BlogContext";
+import { Provider } from "./context/BlogContext";
+import ShowScreen from "./screens/ShowScreen";
 
 const Stack = createNativeStackNavigator();
 
 function RootStack() {
-return ( 
-  <Stack.Navigator screenOptions={{headerTitle: 'Note App'}}>
-    <Stack.Screen name="Home" component={HomeScreen} />
-    <Stack.Screen name="Create" component={CreateScreen} />
-  </Stack.Navigator>
-);
+  return (
+    <Stack.Navigator screenOptions={{ headerTitle: "Note App" }}>
+      <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen name="Create" component={CreateScreen} />
+      <Stack.Screen name="Show" component={ShowScreen} />
+    </Stack.Navigator>
+  );
 }
 export default function App() {
-
-
   return (
-    <BlogProvider>
+    <Provider>
       <NavigationContainer>
-        <RootStack/>
+        <RootStack />
       </NavigationContainer>
-    </BlogProvider>
+    </Provider>
   );
 }
 

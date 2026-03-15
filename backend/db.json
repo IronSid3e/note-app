@@ -1,0 +1,10 @@
+{
+  "blogposts": [
+    {
+      "title": "HELLO WORLD",
+      "content": "React native123123",
+      "id": "d866"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

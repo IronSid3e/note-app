@@ -30,8 +30,6 @@ Uygulama, frontend ve backend'in birbirinden bağımsız ama tünelleme üzerind
 
 ## ⚙️ Kurulum ve Kullanım
 
-### 1. Backend Hazırlığı
-
 ```bash
 # Backend klasörüne gidin
 cd backend

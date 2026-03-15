@@ -1,4 +1,4 @@
-import react, { useState, useReducer } from "react";
+import react, { useState, useReducer, act } from "react";
 import createDataContext from "./createDataContext";
 
 const blogReducer = (state, action) => {
@@ -8,7 +8,8 @@ const blogReducer = (state, action) => {
         ...state,
         {
           id: Math.floor(Math.random() * 999999),
-          title: "test",
+          title: action.payload.title,
+          content: action.payload.content,
         },
       ];
 
@@ -20,8 +21,11 @@ const blogReducer = (state, action) => {
 };
 
 const addBlogPost = (dispatch) => {
-  return () => {
-    dispatch({ type: "add_blogpost" });
+  return (title, content, callback) => {
+    dispatch({ type: "add_blogpost", payload: { title, content } });
+    if (callback) {
+      callback();
+    }
   };
 };
 

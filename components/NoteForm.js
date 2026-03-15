@@ -6,9 +6,8 @@ import {
   View,
 } from "react-native";
 import React, { useState } from "react";
-import { BottomTabs } from "react-native-screens";
 
-export default function NoteForm() {
+export default function NoteForm({ onSubmit }) {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   return (
@@ -27,7 +26,10 @@ export default function NoteForm() {
         onChangeText={(text) => setContent(text)}
       />
 
-      <TouchableOpacity style={styles.buttonMain}>
+      <TouchableOpacity
+        style={styles.buttonMain}
+        onPress={() => onSubmit(title, content)}
+      >
         <View style={styles.buttonView}>
           <Text style={styles.buttonText}>Kaydet</Text>
         </View>

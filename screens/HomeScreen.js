@@ -43,12 +43,23 @@ const styles = StyleSheet.create({
   row: {
     flexDirection: "row",
     justifyContent: "space-between",
-    borderTopWidth: 1,
-    paddingHorizontal: 10,
-    paddingVertical: 20,
-    borderColor: "gray",
+    alignItems: "center",
+    backgroundColor: "#fff",
+    marginHorizontal: 15,
+    marginVertical: 8,
+    paddingHorizontal: 20,
+    paddingVertical: 18,
+    borderRadius: 15,
+    borderWidth: 1,
+    borderColor: "#f0f0f0",
+    elevation: 2,
   },
   title: {
     fontSize: 18,
+    fontWeight: "500",
+    color: "#333",
+  },
+  deleteIcon: {
+    padding: 5,
   },
 });

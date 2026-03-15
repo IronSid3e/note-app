@@ -21,14 +21,36 @@ export default function ShowScreen({ route }) {
 }
 
 const styles = StyleSheet.create({
-  mainContainer: { alignItems: "center", marginTop: 10 },
-  container: {
-    borderWidth: 1,
-    marginBottom: 10,
-    borderRadius: 30,
-    alignItems: "center",
-    width: "90%",
+  mainContainer: {
+    flex: 1,
+    backgroundColor: "#fff",
+    padding: 20,
   },
-  label: { fontSize: 30 },
-  content: { fontSize: 18 },
+  container: {
+    backgroundColor: "#fcfcfc",
+    borderWidth: 1,
+    borderColor: "#eee",
+    padding: 20,
+    marginBottom: 15,
+    borderRadius: 20,
+    width: "100%",
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 2,
+  },
+  label: {
+    fontSize: 14,
+    color: "#888",
+    textTransform: "uppercase",
+    letterSpacing: 1,
+    marginBottom: 5,
+  },
+  content: {
+    fontSize: 20,
+    color: "#333",
+    lineHeight: 28,
+    fontWeight: "400",
+  },
 });

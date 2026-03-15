@@ -30,9 +30,13 @@ function RootStack() {
       <Stack.Screen
         name="Show"
         component={ShowScreen}
-        options={({ navigation }) => ({
+        options={({ navigation, route }) => ({
           headerRight: () => (
-            <TouchableOpacity onPress={() => navigation.navigate("Edit")}>
+            <TouchableOpacity
+              onPress={() =>
+                navigation.navigate("Edit", { id: route.params.id })
+              }
+            >
               <FontAwesome name="pencil" size={24} color="black" />
             </TouchableOpacity>
           ),

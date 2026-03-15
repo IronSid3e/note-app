@@ -14,7 +14,7 @@ export default function HomeScreen({ navigation }) {
   const { state, addBlogPost, deleteBlogPost } = useContext(Context);
   return (
     <View>
-      <Button title="ekle" onPress={addBlogPost} />
+      {/* <Button title="ekle" onPress={addBlogPost} /> */}
 
       <FlatList
         data={state}

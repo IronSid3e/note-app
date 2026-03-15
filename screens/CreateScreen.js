@@ -7,6 +7,7 @@ export default function CreateScreen({ navigation }) {
   const { addBlogPost } = useContext(Context);
   return (
     <NoteForm
+      isEditable={false}
       onSubmit={(title, content) => {
         addBlogPost(title, content, () => navigation.navigate("Home"));
       }}
